@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayCalc Pro | Interactive Salary Calculator for Take-Home Pay</title>
+    <meta name="description" content="Calculate your take-home pay with our beautiful, interactive salary calculator. See tax breakdowns, and plan your financial future.">
+    <meta name="keywords" content="salary calculator, take-home pay, paycheck calculator, tax calculator, net pay, income tax, payroll calculator">
+    <link rel="canonical" href="https://www.example.com/paycalcpro/">
+
+    <meta property="og:title" content="PayCalc Pro | Interactive Salary Calculator">
+    <meta property="og:description" content="Calculate your take-home pay, taxes, and deductions with our advanced salary calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.example.com/paycalcpro/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PayCalc Pro | Interactive Salary Calculator">
+    <meta name="twitter:description" content="Calculate your take-home pay, taxes, and deductions with our advanced salary calculator.">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/ico" sizes="32x32" href="assets/logo2.ico">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How accurate is this calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our calculator uses the latest tax rates and withholding formulas to provide estimates that are typically within 1-2% of actual paycheck amounts. However, individual circumstances can vary, especially with complex tax situations. For personalized tax advice, please consult a tax professional."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this calculator consider all possible deductions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The calculator includes common deductions like retirement contributions, health insurance, and standard tax deductions. For specialized deductions, use the \"Other Deductions\" fields."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are state taxes calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "State tax calculations use the latest published tax rates and brackets for each state. We account for state-specific deductions and exemptions where applicable. States with no income tax (like Texas, Florida, and others) will show $0 for state tax."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data secure and private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. All calculations are performed in your browser, and we don't store any of your personal or financial information on our servers."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <a href="#calculator" aria-label="PayCalc Pro Home">
+                        <div class="logo-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h1>Pay<span>Calc</span><sup>Pro</sup></h1>
+                    </a>
+                </div>
+                <nav id="main-navigation-menu">
+                    <ul class="main-nav">
+                        <li><a href="#calculator" class="nav-link"><i class="fas fa-calculator"></i> Calculator</a></li>
+                        <li><a href="#guides" class="nav-link"><i class="fas fa-book"></i> Guides</a></li>
+                        <li><a href="#faq" class="nav-link"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <button id="theme-toggle" class="btn-icon" aria-label="Toggle color theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </nav>
+                <button id="mobile-menu-toggle" class="btn-icon mobile-only" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-navigation-menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <div class="ad-container ad-banner">
+                <div class="ad-label">Advertisement</div>
+                <!-- Ad code would go here -->
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="badge">Trusted by 50,000+ professionals</span>
+                        <h2>Calculate Your <span class="gradient-text">Real</span> Take-Home Pay</h2>
+                        <p>Our advanced salary calculator gives you accurate insights into your pay, taxes, and deductions with beautiful visualizations and personalized reports.</p>
+                        <div class="hero-buttons">
+                            <a href="#calculator" class="btn btn-primary btn-large">
+                                <i class="fas fa-calculator"></i> Calculate Now
+                            </a>
+                            <a href="#guides" class="btn btn-secondary btn-large">
+                                <i class="fas fa-info-circle"></i> Learn More
+                            </a>
+                        </div>
+                        <div class="hero-features">
+                            <div class="feature-tag"><i class="fas fa-check-circle"></i> 100% Free</div>
+                            <div class="feature-tag"><i class="fas fa-check-circle"></i> Up-to-date Tax Rates</div>
+                            <div class="feature-tag"><i class="fas fa-check-circle"></i> Secure & Private</div>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="assets/hero-illustration.png" alt="Illustration for salary calculator hero section" class="floating-animation">
+                        <div class="hero-blob"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="calculator" class="calculator-section">
+                <div class="container calculator-container">
+                    <div class="calculator-main">
+                        <div class="section-header">
+                            <h2><i class="fas fa-calculator"></i> Salary Calculator</h2>
+                            <p>Enter your details below for an accurate breakdown of your take-home pay.</p>
+                        </div>
+                                                
+                        <div class="calculator-forms">
+                            <form id="salary-form" class="calculator-form active" data-form="standard">
+                                <div class="form-card">
+                                    <h3>Income Details</h3>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="income-type">Income Type</label>
+                                            <div class="select-wrapper">
+                                                <select id="income-type" name="income-type" class="form-control">
+                                                    <option value="annual">Annual Salary</option>
+                                                    <option value="hourly">Hourly Rate</option>
+                                                    <option value="monthly">Monthly Salary</option>
+                                                </select>
+                                                <i class="fas fa-chevron-down"></i>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group" id="annual-input">
+                                            <label for="annual-salary">Annual Salary</label>
+                                            <div class="input-with-icon">
+                                                <span class="currency-symbol">$</span>
+                                                <input type="number" id="annual-salary" name="annual-salary" placeholder="e.g., 60000" class="form-control" min="0">
+                                                <div class="input-tooltip" data-tooltip="Enter your total yearly salary before taxes and deductions">
+                                                    <i class="fas fa-info-circle"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group hidden" id="hourly-inputs">
+                                            <label for="hourly-rate">Hourly Rate</label>
+                                            <div class="input-with-icon">
+                                                <span class="currency-symbol">$</span>
+                                                <input type="number" id="hourly-rate" name="hourly-rate" placeholder="e.g., 28.75" class="form-control" min="0">
+                                                <div class="input-tooltip" data-tooltip="Enter your hourly wage rate">
+                                                    <i class="fas fa-info-circle"></i>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-row sub-form-row">
+                                                <div class="form-group">
+                                                    <label for="hours-per-week">Hours/Week</label>
+                                                    <input type="number" id="hours-per-week" name="hours-per-week" value="40" min="1" max="168" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="weeks-per-year">Weeks/Year</label>
+                                                    <input type="number" id="weeks-per-year" name="weeks-per-year" value="52" min="1" max="52" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group hidden" id="monthly-input">
+                                            <label for="monthly-salary">Monthly Salary</label>
+                                            <div class="input-with-icon">
+                                                <span class="currency-symbol">$</span>
+                                                <input type="number" id="monthly-salary" name="monthly-salary" placeholder="e.g., 5000" class="form-control" min="0">
+                                                <div class="input-tooltip" data-tooltip="Enter your monthly salary before taxes and deductions">
+                                                    <i class="fas fa-info-circle"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="pay-frequency">Pay Frequency</label>
+                                            <div class="select-wrapper">
+                                                <select id="pay-frequency" name="pay-frequency" class="form-control">
+                                                    <option value="monthly" selected>Monthly (12 pays/year)</option>
+                                                    <option value="biweekly">Bi-weekly (26 pays/year)</option>
+                                                    <option value="weekly">Weekly (52 pays/year)</option>
+                                                    <option value="semimonthly">Semi-monthly (24 pays/year)</option>
+                                                </select>
+                                                <i class="fas fa-chevron-down"></i>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="include-bonus">Include Bonus?</label>
+                                            <div class="toggle-switch">
+                                                <input type="checkbox" id="include-bonus" name="include-bonus">
+                                                <label for="include-bonus" class="toggle-label"></label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group" id="bonus-input">
+                                            <label for="bonus-amount">Bonus Amount ($)</label>
+                                            <div class="input-with-icon">
+                                                <span class="currency-symbol">$</span>
+                                                <input type="number" id="bonus-amount" name="bonus-amount" placeholder="e.g., 5000" class="form-control" min="0">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-card">
+                                    <h3>Tax Information</h3>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="filing-status">Filing Status</label>
+                                            <div class="select-wrapper">
+                                                <select id="filing-status" name="filing-status" class="form-control">
+                                                    <option value="single">Single</option>
+                                                    <option value="married-joint">Married Filing Jointly</option>
+                                                    <option value="married-separate">Married Filing Separately</option>
+                                                    <option value="head">Head of Household</option>
+                                                </select>
+                                                <i class="fas fa-chevron-down"></i>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="location">State</label>
+                                            <div class="select-wrapper">
+                                                <select id="location" name="location" class="form-control">
+                                                    <option value="alabama">Alabama</option>
+                                                    <option value="alaska">Alaska</option>
+                                                    <option value="arizona">Arizona</option>
+                                                    <option value="arkansas">Arkansas</option>
+                                                    <option value="california">California</option>
+                                                    <option value="colorado">Colorado</option>
+                                                    <option value="connecticut">Connecticut</option>
+                                                    <option value="delaware">Delaware</option>
+                                                    <option value="florida">Florida</option>
+                                                    <option value="georgia">Georgia</option>
+                                                    <option value="hawaii">Hawaii</option>
+                                                    <option value="idaho">Idaho</option>
+                                                    <option value="illinois">Illinois</option>
+                                                    <option value="indiana">Indiana</option>
+                                                    <option value="iowa">Iowa</option>
+                                                    <option value="kansas">Kansas</option>
+                                                    <option value="kentucky">Kentucky</option>
+                                                    <option value="louisiana">Louisiana</option>
+                                                    <option value="maine">Maine</option>
+                                                    <option value="maryland">Maryland</option>
+                                                    <option value="massachusetts">Massachusetts</option>
+                                                    <option value="michigan">Michigan</option>
+                                                    <option value="minnesota">Minnesota</option>
+                                                    <option value="mississippi">Mississippi</option>
+                                                    <option value="missouri">Missouri</option>
+                                                    <option value="montana">Montana</option>
+                                                    <option value="nebraska">Nebraska</option>
+                                                    <option value="nevada">Nevada</option>
+                                                    <option value="new-hampshire">New Hampshire</option>
+                                                    <option value="new-jersey">New Jersey</option>
+                                                    <option value="new-mexico">New Mexico</option>
+                                                    <option value="new-york">New York</option>
+                                                    <option value="north-carolina">North Carolina</option>
+                                                    <option value="north-dakota">North Dakota</option>
+                                                    <option value="ohio">Ohio</option>
+                                                    <option value="oklahoma">Oklahoma</option>
+                                                    <option value="oregon">Oregon</option>
+                                                    <option value="pennsylvania">Pennsylvania</option>
+                                                    <option value="rhode-island">Rhode Island</option>
+                                                    <option value="south-carolina">South Carolina</option>
+                                                    <option value="south-dakota">South Dakota</option>
+                                                    <option value="tennessee">Tennessee</option>
+                                                    <option value="texas">Texas</option>
+                                                    <option value="utah">Utah</option>
+                                                    <option value="vermont">Vermont</option>
+                                                    <option value="virginia">Virginia</option>
+                                                    <option value="washington">Washington</option>
+                                                    <option value="west-virginia">West Virginia</option>
+                                                    <option value="wisconsin">Wisconsin</option>
+                                                    <option value="wyoming">Wyoming</option>
+                                                </select>
+                                                <i class="fas fa-chevron-down"></i>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="dependents">Dependents</label>
+                                            <div class="number-stepper">
+                                                <button type="button" class="stepper-btn minus" aria-label="Decrease dependents">
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+                                                <input type="number" id="dependents" name="dependents" value="0" min="0" max="10" class="form-control">
+                                                <button type="button" class="stepper-btn plus" aria-label="Increase dependents">
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="advanced-options">
+                                    <button type="button" id="toggle-advanced" class="btn-text" aria-expanded="false" aria-controls="advanced-fields">
+                                        <i class="fas fa-sliders-h"></i> 
+                                        Show Advanced Options 
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    
+                                    <div id="advanced-fields" class="hidden">
+                                        <div class="form-card">
+                                            <h3>Deductions & Benefits</h3>
+                                            
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label for="retirement-type">Retirement Plan</label>
+                                                    <div class="select-wrapper">
+                                                        <select id="retirement-type" name="retirement-type" class="form-control">
+                                                            <option value="401k">401(k)</option>
+                                                            <option value="403b">403(b)</option>
+                                                            <option value="457">457</option>
+                                                            <option value="ira">IRA</option>
+                                                            <option value="none">None</option>
+                                                        </select>
+                                                        <i class="fas fa-chevron-down"></i>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="form-group">
+                                                    <label for="retirement">Contribution (%)</label>
+                                                    <div class="input-with-icon">
+                                                        <input type="number" id="retirement" name="retirement" min="0" max="100" step="0.1" value="0" class="form-control">
+                                                        <span class="unit-symbol">%</span>
+                                                        <div class="input-tooltip" data-tooltip="Percentage of your gross pay contributed to retirement">
+                                                            <i class="fas fa-info-circle"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="form-group">
+                                                    <label for="employer-match">Employer Match (%)</label>
+                                                    <div class="input-with-icon">
+                                                        <input type="number" id="employer-match" name="employer-match" min="0" max="100" step="0.1" value="0" class="form-control">
+                                                        <span class="unit-symbol">%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label for="health-insurance">Health Insurance ($/month)</label>
+                                                    <div class="input-with-icon">
+                                                        <span class="currency-symbol">$</span>
+                                                        <input type="number" id="health-insurance" name="health-insurance" min="0" value="0" class="form-control">
+                                                        <div class="input-tooltip" data-tooltip="Monthly pre-tax health insurance premium">
+                                                            <i class="fas fa-info-circle"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="form-group">
+                                                    <label for="hsa-contribution">HSA Contribution ($/year)</label>
+                                                    <div class="input-with-icon">
+                                                        <span class="currency-symbol">$</span>
+                                                        <input type="number" id="hsa-contribution" name="hsa-contribution" min="0" value="0" class="form-control">
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="form-group">
+                                                    <label for="fsa-contribution">FSA Contribution ($/year)</label>
+                                                    <div class="input-with-icon">
+                                                        <span class="currency-symbol">$</span>
+                                                        <input type="number" id="fsa-contribution" name="fsa-contribution" min="0" value="0" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label for="other-pretax">Other Pre-tax Deductions ($/year)</label>
+                                                    <div class="input-with-icon">
+                                                        <span class="currency-symbol">$</span>
+                                                        <input type="number" id="other-pretax" name="other-pretax" min="0" value="0" class="form-control">
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="form-group">
+                                                    <label for="other-posttax">Other Post-tax Deductions ($/year)</label>
+                                                    <div class="input-with-icon">
+                                                        <span class="currency-symbol">$</span>
+                                                        <input type="number" id="other-posttax" name="other-posttax" min="0" value="0" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-card">
+                                            <h3>Tax Credits & Adjustments</h3>
+                                            
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label for="child-tax-credit">Child Tax Credit</label>
+                                                    <div class="toggle-switch">
+                                                        <input type="checkbox" id="child-tax-credit" name="child-tax-credit">
+                                                        <label for="child-tax-credit" class="toggle-label"></label>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="form-group">
+                                                    <label for="education-credit">Education Credits</label>
+                                                    <div class="toggle-switch">
+                                                        <input type="checkbox" id="education-credit" name="education-credit">
+                                                        <label for="education-credit" class="toggle-label"></label>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="form-group">
+                                                    <label for="student-loan-interest">Student Loan Interest ($)</label>
+                                                    <div class="input-with-icon">
+                                                        <span class="currency-symbol">$</span>
+                                                        <input type="number" id="student-loan-interest" name="student-loan-interest" min="0" value="0" max="2500" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="reset" class="btn btn-outline">
+                                        <i class="fas fa-redo"></i> Reset
+                                    </button>
+                                    <button type="submit" class="btn btn-primary btn-large">
+                                        <i class="fas fa-calculator"></i> Calculate Salary
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div id="results" class="results-container hidden">
+                            <div class="results-header">
+                                <h3>
+                                    <i class="fas fa-chart-pie"></i> 
+                                    Your Salary Breakdown
+                                </h3>
+                                <div class="results-tabs" role="tablist" aria-label="Results view type">
+                                    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="results-summary-content" id="results-summary-tab" data-result-tab="summary">
+                                        <i class="fas fa-list"></i> Summary
+                                    </button>
+                                    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="results-detailed-content" id="results-detailed-tab" data-result-tab="detailed">
+                                        <i class="fas fa-table"></i> Detailed
+                                    </button>
+                                    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="results-charts-content" id="results-charts-tab" data-result-tab="charts">
+                                        <i class="fas fa-chart-pie"></i> Charts
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="results-content">
+                                <div class="result-tab-content active" id="results-summary-content" role="tabpanel" aria-labelledby="results-summary-tab" data-result-content="summary">
+                                    <div class="results-summary">
+                                        <div class="result-card primary-card">
+                                            <div class="card-badge">Net Pay</div>
+                                            <div class="time-period" role="radiogroup" aria-label="Net pay period">
+                                                <button class="period-btn active" role="radio" aria-checked="true" data-period="annual">Annual</button>
+                                                <button class="period-btn" role="radio" aria-checked="false" data-period="monthly">Monthly</button>
+                                                <button class="period-btn" role="radio" aria-checked="false" data-period="biweekly">Bi-Weekly</button>
+                                            </div>
+                                            <div class="amount-container">
+                                                <div class="amount" id="annual-net">$0</div>
+                                                <div class="amount hidden" id="monthly-net">$0</div>
+                                                <div class="amount hidden" id="biweekly-net">$0</div>
+                                            </div>
+                                            <div class="amount-subtitle">Take-Home Pay</div>
+                                            <div class="effective-rate">
+                                                <span class="label">Effective Tax Rate:</span>
+                                                <span class="value" id="effective-tax-rate">0%</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="breakdown-cards">
+                                            <div class="result-card">
+                                                <div class="card-icon tax-icon">
+                                                    <i class="fas fa-hand-holding-usd"></i>
+                                                </div>
+                                                <div class="card-title">Gross Pay</div>
+                                                <div class="amount" id="annual-gross">$0</div>
+                                            </div>
+                                            
+                                            <div class="result-card">
+                                                <div class="card-icon tax-icon">
+                                                    <i class="fas fa-landmark"></i>
+                                                </div>
+                                                <div class="card-title">Total Taxes</div>
+                                                <div class="amount" id="annual-tax">$0</div>
+                                            </div>
+                                            
+                                            <div class="result-card">
+                                                <div class="card-icon deduction-icon">
+                                                    <i class="fas fa-piggy-bank"></i>
+                                                </div>
+                                                <div class="card-title">Deductions</div>
+                                                <div class="amount" id="annual-deductions">$0</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="pay-breakdown">
+                                        <div class="pay-breakdown-header">
+                                            <h4>Annual Pay Breakdown</h4>
+                                            <!-- Period switcher removed from here for simplicity -->
+                                        </div>
+                                        
+                                        <div class="progress-bars">
+                                            <div class="progress-item">
+                                                <div class="progress-label">
+                                                    <span>Federal Income Tax</span>
+                                                    <span id="federal-tax-amount">$0</span>
+                                                </div>
+                                                <div class="progress-bar-container" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Federal Income Tax percentage">
+                                                    <div class="progress-bar" id="federal-tax-bar" style="width: 0%"></div>
+                                                </div>
+                                                <div class="progress-percentage" id="federal-tax-percent">0%</div>
+                                            </div>
+                                            
+                                            <div class="progress-item">
+                                                <div class="progress-label">
+                                                    <span>State Income Tax</span>
+                                                    <span id="state-tax-amount">$0</span>
+                                                </div>
+                                                <div class="progress-bar-container" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="State Income Tax percentage">
+                                                    <div class="progress-bar" id="state-tax-bar" style="width: 0%"></div>
+                                                </div>
+                                                <div class="progress-percentage" id="state-tax-percent">0%</div>
+                                            </div>
+                                            
+                                            <div class="progress-item">
+                                                <div class="progress-label">
+                                                    <span>FICA (Social Security & Medicare)</span>
+                                                    <span id="fica-amount">$0</span>
+                                                </div>
+                                                <div class="progress-bar-container" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="FICA percentage">
+                                                    <div class="progress-bar" id="fica-bar" style="width: 0%"></div>
+                                                </div>
+                                                <div class="progress-percentage" id="fica-percent">0%</div>
+                                            </div>
+                                            
+                                            <div class="progress-item">
+                                                <div class="progress-label">
+                                                    <span>Retirement Contributions</span>
+                                                    <span id="retirement-amount">$0</span>
+                                                </div>
+                                                <div class="progress-bar-container" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Retirement contributions percentage">
+                                                    <div class="progress-bar retirement-bar" id="retirement-bar" style="width: 0%"></div>
+                                                </div>
+                                                <div class="progress-percentage" id="retirement-percent">0%</div>
+                                            </div>
+                                            
+                                            <div class="progress-item">
+                                                <div class="progress-label">
+                                                    <span>Health Insurance & Benefits</span>
+                                                    <span id="benefits-amount">$0</span>
+                                                </div>
+                                                <div class="progress-bar-container" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Health Insurance & Benefits percentage">
+                                                    <div class="progress-bar benefits-bar" id="benefits-bar" style="width: 0%"></div>
+                                                </div>
+                                                <div class="progress-percentage" id="benefits-percent">0%</div>
+                                            </div>
+                                            
+                                            <div class="progress-item">
+                                                <div class="progress-label">
+                                                    <span>Other Deductions</span>
+                                                    <span id="other-deductions-amount">$0</span>
+                                                </div>
+                                                <div class="progress-bar-container" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Other Deductions percentage">
+                                                    <div class="progress-bar other-bar" id="other-deductions-bar" style="width: 0%"></div>
+                                                </div>
+                                                <div class="progress-percentage" id="other-deductions-percent">0%</div>
+                                            </div>
+                                            
+                                            <div class="progress-item">
+                                                <div class="progress-label take-home">
+                                                    <span>Take-Home Pay</span>
+                                                    <span id="take-home-amount">$0</span>
+                                                </div>
+                                                <div class="progress-bar-container" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Take-Home Pay percentage">
+                                                    <div class="progress-bar take-home-bar" id="take-home-bar" style="width: 0%"></div>
+                                                </div>
+                                                <div class="progress-percentage" id="take-home-percent">0%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="result-tab-content" id="results-detailed-content" role="tabpanel" aria-labelledby="results-detailed-tab" data-result-content="detailed">
+                                    <div class="results-table-container">
+                                        <table class="results-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Category</th>
+                                                    <th>Annual</th>
+                                                    <th>Monthly</th>
+                                                    <th>Bi-Weekly</th>
+                                                    <th>Percentage</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="table-section">
+                                                    <td colspan="5">Income</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gross Salary</td>
+                                                    <td id="table-annual-gross">$0</td>
+                                                    <td id="table-monthly-gross">$0</td>
+                                                    <td id="table-biweekly-gross">$0</td>
+                                                    <td id="table-gross-percent">100%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Bonus</td>
+                                                    <td id="table-annual-bonus">$0</td>
+                                                    <td id="table-monthly-bonus">$0</td>
+                                                    <td id="table-biweekly-bonus">$0</td>
+                                                    <td id="table-bonus-percent">0%</td>
+                                                </tr>
+                                                <tr class="subtotal">
+                                                    <td>Total Gross Income</td>
+                                                    <td id="table-annual-total-income">$0</td>
+                                                    <td id="table-monthly-total-income">$0</td>
+                                                    <td id="table-biweekly-total-income">$0</td>
+                                                    <td id="table-total-income-percent">100%</td>
+                                                </tr>
+                                                
+                                                <tr class="table-section">
+                                                    <td colspan="5">Pre-Tax Deductions</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Retirement Contributions</td>
+                                                    <td id="table-annual-retirement">$0</td>
+                                                    <td id="table-monthly-retirement">$0</td>
+                                                    <td id="table-biweekly-retirement">$0</td>
+                                                    <td id="table-retirement-percent">0%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Health Insurance</td>
+                                                    <td id="table-annual-health">$0</td>
+                                                    <td id="table-monthly-health">$0</td>
+                                                    <td id="table-biweekly-health">$0</td>
+                                                    <td id="table-health-percent">0%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>HSA/FSA Contributions</td>
+                                                    <td id="table-annual-hsa-fsa">$0</td>
+                                                    <td id="table-monthly-hsa-fsa">$0</td>
+                                                    <td id="table-biweekly-hsa-fsa">$0</td>
+                                                    <td id="table-hsa-fsa-percent">0%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Other Pre-Tax Deductions</td>
+                                                    <td id="table-annual-other-pretax">$0</td>
+                                                    <td id="table-monthly-other-pretax">$0</td>
+                                                    <td id="table-biweekly-other-pretax">$0</td>
+                                                    <td id="table-other-pretax-percent">0%</td>
+                                                </tr>
+                                                <tr class="subtotal">
+                                                    <td>Total Pre-Tax Deductions</td>
+                                                    <td id="table-annual-total-pretax">$0</td>
+                                                    <td id="table-monthly-total-pretax">$0</td>
+                                                    <td id="table-biweekly-total-pretax">$0</td>
+                                                    <td id="table-total-pretax-percent">0%</td>
+                                                </tr>
+                                                
+                                                <tr class="table-section">
+                                                    <td colspan="5">Taxable Income</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Federal Taxable Income</td>
+                                                    <td id="table-annual-taxable">$0</td>
+                                                    <td id="table-monthly-taxable">$0</td>
+                                                    <td id="table-biweekly-taxable">$0</td>
+                                                    <td id="table-taxable-percent">0%</td>
+                                                </tr>
+                                                
+                                                <tr class="table-section">
+                                                    <td colspan="5">Taxes</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Federal Income Tax</td>
+                                                    <td id="table-annual-federal">$0</td>
+                                                    <td id="table-monthly-federal">$0</td>
+                                                    <td id="table-biweekly-federal">$0</td>
+                                                    <td id="table-federal-percent">0%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>State Income Tax</td>
+                                                    <td id="table-annual-state">$0</td>
+                                                    <td id="table-monthly-state">$0</td>
+                                                    <td id="table-biweekly-state">$0</td>
+                                                    <td id="table-state-percent">0%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Social Security Tax</td>
+                                                    <td id="table-annual-ss">$0</td>
+                                                    <td id="table-monthly-ss">$0</td>
+                                                    <td id="table-biweekly-ss">$0</td>
+                                                    <td id="table-ss-percent">0%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Medicare Tax</td>
+                                                    <td id="table-annual-medicare">$0</td>
+                                                    <td id="table-monthly-medicare">$0</td>
+                                                    <td id="table-biweekly-medicare">$0</td>
+                                                    <td id="table-medicare-percent">0%</td>
+                                                </tr>
+                                                <tr class="subtotal">
+                                                    <td>Total Taxes</td>
+                                                    <td id="table-annual-total-tax">$0</td>
+                                                    <td id="table-monthly-total-tax">$0</td>
+                                                    <td id="table-biweekly-total-tax">$0</td>
+                                                    <td id="table-total-tax-percent">0%</td>
+                                                </tr>
+                                                
+                                                <tr class="table-section">
+                                                    <td colspan="5">Post-Tax Deductions</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Other Post-Tax Deductions</td>
+                                                    <td id="table-annual-posttax">$0</td>
+                                                    <td id="table-monthly-posttax">$0</td>
+                                                    <td id="table-biweekly-posttax">$0</td>
+                                                    <td id="table-posttax-percent">0%</td>
+                                                </tr>
+                                                
+                                                <tr class="net-pay">
+                                                    <td>Net Pay (Take-Home)</td>
+                                                    <td id="table-annual-net">$0</td>
+                                                    <td id="table-monthly-net">$0</td>
+                                                    <td id="table-biweekly-net">$0</td>
+                                                    <td id="table-net-percent">0%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                                <div class="result-tab-content" id="results-charts-content" role="tabpanel" aria-labelledby="results-charts-tab" data-result-content="charts">
+                                    <div class="charts-container">
+                                        <div class="chart-row">
+                                            <div class="chart-card">
+                                                <h4>Income Breakdown</h4>
+                                                <div class="chart-container">
+                                                    <canvas id="income-breakdown-chart" aria-label="Doughnut chart showing income breakdown into Net Income, Taxes, and Deductions"></canvas>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="chart-card">
+                                                <h4>Tax Distribution</h4>
+                                                <div class="chart-container">
+                                                    <canvas id="tax-distribution-chart" aria-label="Pie chart showing tax distribution into Federal, State, Social Security, and Medicare taxes"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="chart-row">
+                                            <div class="chart-card full-width">
+                                                <h4>Paycheck Breakdown</h4>
+                                                <div class="chart-container">
+                                                    <canvas id="paycheck-breakdown-chart" aria-label="Stacked bar chart showing paycheck breakdown into various taxes, deductions, and take-home pay"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="chart-row">
+                                            <div class="chart-card">
+                                                <h4>Marginal Tax Rates</h4>
+                                                <div class="chart-container">
+                                                    <canvas id="tax-brackets-chart" aria-label="Bar chart showing tax amounts for each federal tax bracket"></canvas>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="chart-card">
+                                                <h4>Net vs. Gross Pay</h4>
+                                                <div class="chart-container">
+                                                    <canvas id="net-vs-gross-chart" aria-label="Bar chart comparing Gross Pay and Net Pay amounts"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ad-container ad-content">
+                                <div class="ad-label">Advertisement</div>
+                                <!-- Ad code would go here -->
+                            </div>
+                            
+                            <div class="results-actions">
+                                <div class="action-buttons">
+                                    <button id="print-results" class="btn btn-outline" aria-label="Print results">
+                                        <i class="fas fa-print"></i> Print
+                                    </button>
+                                    <button id="download-pdf" class="btn btn-outline placeholder-button" aria-label="Download results as PDF (Demo)">
+                                        <i class="fas fa-file-pdf"></i> Download PDF
+                                    </button>
+                                </div>
+                                <div class="action-buttons">
+                                    <button id="new-calculation" class="btn btn-secondary" aria-label="Start a new calculation">
+                                        <i class="fas fa-calculator"></i> New Calculation
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="insights-container">
+                                <h4><i class="fas fa-lightbulb"></i> Salary Insights</h4>
+                                <div class="insights-grid">
+                                    <div class="insight-card">
+                                        <div class="insight-icon"><i class="fas fa-percentage"></i></div>
+                                        <h5>Tax Efficiency</h5>
+                                        <p>Your effective tax rate is <span id="insight-tax-rate">0%</span>. Consider maximizing pre-tax contributions to lower your taxable income.</p>
+                                    </div>
+                                    <div class="insight-card">
+                                        <div class="insight-icon"><i class="fas fa-chart-line"></i></div>
+                                        <h5>Retirement Outlook</h5>
+                                        <p>You're saving <span id="insight-retirement-percent">0%</span> of your income for retirement. Financial experts recommend 15-20%.</p>
+                                    </div>
+                                    <div class="insight-card">
+                                        <div class="insight-icon"><i class="fas fa-piggy-bank"></i></div>
+                                        <h5>Savings Potential</h5>
+                                        <p>Setting aside <span id="insight-savings-amount">$0</span> monthly could build a 3-month emergency fund in <span id="insight-emergency-months">0</span> months.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <aside class="calculator-sidebar">
+                        <div class="ad-container ad-sidebar">
+                            <div class="ad-label">Advertisement</div>
+                            <!-- Ad code would go here -->
+                        </div>
+                                                
+                        <div class="sidebar-section related-tools">
+                            <h3><i class="fas fa-tools"></i> Related Tools</h3>
+                            <div class="tools-list">
+                                <a href="https://www.irs.gov/filing/federal-income-tax-rates-and-brackets" target="_blank" rel="noopener noreferrer" class="tool-card">
+                                    <div class="tool-icon"><i class="fas fa-percentage"></i></div>
+                                    <div class="tool-info">
+                                        <h4>Tax Bracket Info</h4>
+                                        <p>Official IRS tax rates & brackets</p>
+                                    </div>
+                                </a>
+                                <a href="https://www.consumerfinance.gov/consumer-tools/budgeting/" target="_blank" rel="noopener noreferrer" class="tool-card">
+                                    <div class="tool-icon"><i class="fas fa-chart-pie"></i></div>
+                                    <div class="tool-info">
+                                        <h4>Budgeting Tool</h4>
+                                        <p>Create a budget (ConsumerFinance.gov)</p>
+                                    </div>
+                                </a>
+                                <a href="https://www.nerdwallet.com/investing/retirement-calculator" target="_blank" rel="noopener noreferrer" class="tool-card">
+                                    <div class="tool-icon"><i class="fas fa-piggy-bank"></i></div>
+                                    <div class="tool-info">
+                                        <h4>Retirement Calculator</h4>
+                                        <p>Plan your retirement savings goals</p>
+                                    </div>
+                                </a>
+                                <a href="https://www.nerdwallet.com/mortgages/mortgage-calculator" target="_blank" rel="noopener noreferrer" class="tool-card">
+                                    <div class="tool-icon"><i class="fas fa-home"></i></div>
+                                    <div class="tool-info">
+                                        <h4>Mortgage Calculator</h4>
+                                        <p>Estimate your home buying power</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <section id="guides" class="guides-section">
+                <div class="container">
+                    <div class="section-header centered">
+                        <span class="section-tag">Knowledge Center</span>
+                        <h2>Salary & Tax Guides</h2>
+                        <p>Make better financial decisions with our expert guides and resources</p>
+                    </div>
+                    
+                    <div class="guides-grid">
+                        <div class="guide-card">
+                            <div class="guide-icon">
+                                <i class="fas fa-file-invoice-dollar"></i>
+                            </div>
+                            <h3>Understanding Your Paycheck</h3>
+                            <p>Learn what all those deductions mean and how they impact your take-home pay.</p>
+                            <a href="https://www.irs.gov/individuals/understanding-your-pay-stub" target="_blank" rel="noopener noreferrer" class="btn-text">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        
+                        <div class="guide-card">
+                            <div class="guide-icon">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <h3>Tax Saving Strategies</h3>
+                            <p>Discover legal ways to reduce your tax burden and keep more of your hard-earned money.</p>
+                            <a href="https://www.investopedia.com/articles/personal-finance/071615/8-ways-reduce-your-tax-bill.asp" target="_blank" rel="noopener noreferrer" class="btn-text">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        
+                        <div class="guide-card">
+                            <div class="guide-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Maximizing Retirement Benefits</h3>
+                            <p>Strategies to optimize your retirement contributions for long-term wealth building.</p>
+                            <a href="https://www.consumerfinance.gov/consumer-tools/retirement/" target="_blank" rel="noopener noreferrer" class="btn-text">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        
+                        <div class="guide-card">
+                            <div class="guide-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h3>Negotiating Your Salary</h3>
+                            <p>Tips and techniques for successfully negotiating a higher salary or raise.</p>
+                            <a href="https://www.glassdoor.com/blog/guide/salary-negotiation-tips/" target="_blank" rel="noopener noreferrer" class="btn-text">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="guides-cta">
+                        <h3>Need Personalized Advice?</h3>
+                        <p>Our tax professionals can provide customized guidance for your specific situation.</p>
+                        <a href="https://taxexperts.naea.org/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Find a Tax Professional</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="faq" class="faq-section">
+                <div class="container">
+                    <div class="section-header centered">
+                        <span class="section-tag">Questions & Answers</span>
+                        <h2>Frequently Asked Questions</h2>
+                        <p>Find answers to common questions about salary calculations and taxes</p>
+                    </div>
+                    
+                    <div class="faq-container">
+                        <div class="faq-column">
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h3>How accurate is this calculator?</h3>
+                                    <button class="faq-toggle" aria-expanded="false" aria-controls="faq-answer-1">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+                                <div class="faq-answer" id="faq-answer-1">
+                                    <div><p>Our calculator uses the latest tax rates and withholding formulas to provide estimates that are typically within 1-2% of actual paycheck amounts. However, individual circumstances can vary, especially with complex tax situations. For personalized tax advice, please consult a tax professional.</p></div>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h3>Does this calculator consider all possible deductions?</h3>
+                                    <button class="faq-toggle" aria-expanded="false" aria-controls="faq-answer-2">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+                                <div class="faq-answer" id="faq-answer-2">
+                                    <div><p>The calculator includes common deductions like retirement contributions, health insurance, and standard tax deductions. For specialized deductions, use the "Other Deductions" fields.</p></div>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h3>How are state taxes calculated?</h3>
+                                    <button class="faq-toggle" aria-expanded="false" aria-controls="faq-answer-3">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+                                <div class="faq-answer" id="faq-answer-3">
+                                    <div><p>State tax calculations use the latest published tax rates and brackets for each state. We account for state-specific deductions and exemptions where applicable. States with no income tax (like Texas, Florida, and others) will show $0 for state tax.</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-column">
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h3>Is my data secure and private?</h3>
+                                    <button class="faq-toggle" aria-expanded="false" aria-controls="faq-answer-6">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+                                <div class="faq-answer" id="faq-answer-6">
+                                    <div><p>Absolutely. All calculations are performed in your browser, and we don't store any of your personal or financial information on our servers.</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ad-container ad-horizontal">
+                        <div class="ad-label">Advertisement</div>
+                        <!-- Ad code would go here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-main">
+                <div class="container">
+                    <div class="footer-grid">
+                        <div class="footer-about">
+                            <div class="footer-logo">
+                                <h2>Pay<span>Calc</span><sup>Pro</sup></h2>
+                            </div>
+                            <p>Helping you understand your salary, taxes, and take-home pay with accurate, easy-to-use tools.</p>
+                            <div class="social-icons">
+                                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="footer-links">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="#calculator">Salary Calculator</a></li>
+                                <li><a href="#guides">Salary Guides</a></li>
+                                <li><a href="#faq">FAQ</a></li>
+                                <li><a href="https://www.irs.gov/help/ita" target="_blank" rel="noopener noreferrer">Tax Resources (IRS ITA)</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-links">
+                            <h3>Tools</h3>
+                            <ul>
+                                <li><a href="https://www.irs.gov/filing/federal-income-tax-rates-and-brackets" target="_blank" rel="noopener noreferrer">Tax Bracket Info (IRS)</a></li>
+                                <li><a href="https://www.consumerfinance.gov/consumer-tools/budgeting/" target="_blank" rel="noopener noreferrer">Budgeting Tool (CFPB)</a></li>
+                                <li><a href="https://www.nerdwallet.com/investing/retirement-calculator" target="_blank" rel="noopener noreferrer">Retirement Calculator</a></li>
+                                <li><a href="https://www.nerdwallet.com/mortgages/mortgage-calculator" target="_blank" rel="noopener noreferrer">Mortgage Calculator</a></li>
+                                <li><a href="#calculator">All Calculators</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-links">
+                            <h3>Company</h3>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                                <li><a href="#">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="copyright">
+                        <p>© <span id="current-year">2023</span> PayCalc Pro. All rights reserved.</p>
+                    </div>
+                    <div class="disclaimer">
+                        <p>This calculator provides estimates only and should not be considered financial advice. Please consult with a tax professional for personalized guidance.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
